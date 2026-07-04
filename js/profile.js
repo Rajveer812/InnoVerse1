@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3 class="text-lg font-bold text-white mb-2">${proj.title}</h3>
                 <p class="text-gray-400 text-sm mb-6 leading-relaxed flex-grow line-clamp-3 quill-content">${proj.description}</p>
                 <div class="flex items-center justify-between mt-4">
-                    <span class="bg-[#1a1d26] text-blue-400 px-2 py-1 rounded text-xs font-medium capitalize">${proj.category}</span>
+                    <span class="bg-[#18181b] text-blue-400 px-2 py-1 rounded text-xs font-medium capitalize">${proj.category}</span>
                     <button onclick="toggleLike('${proj.id}', this)" class="flex items-center gap-1 text-gray-400 hover:text-red-500 transition-colors text-xs font-medium cursor-pointer">
                         <span class="heart-icon text-lg ${likeColor}">${likeIcon}</span> <span class="like-count">${displayLikes}</span>
                     </button>

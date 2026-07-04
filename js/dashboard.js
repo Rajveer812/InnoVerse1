@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         if (userProjects.length === 0) {
             dashboardGrid.innerHTML = `
-                <div class="col-span-full text-center py-20 bg-[#11131a] rounded-xl border border-gray-800">
+                <div class="col-span-full text-center py-20 bg-[#09090b] rounded-xl border border-gray-800">
                     <p class="text-gray-400 text-lg mb-4">You haven't submitted any projects yet.</p>
                     <a href="submit.html" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg inline-block hover:shadow-[0_0_15px_rgba(79,70,229,0.5)] transition-all">Submit a Project</a>
                 </div>
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <h3 class="text-lg font-bold text-white mb-2">${proj.title}</h3>
                 <p class="text-gray-400 text-sm mb-6 leading-relaxed flex-grow line-clamp-3">${proj.description}</p>
                 <div class="flex items-center justify-between mt-4">
-                    <span class="bg-[#1a1d26] text-blue-400 px-2 py-1 rounded text-xs font-medium capitalize">${proj.category}</span>
+                    <span class="bg-[#18181b] text-blue-400 px-2 py-1 rounded text-xs font-medium capitalize">${proj.category}</span>
                     <button onclick="toggleLike('${proj.id}', this)" class="flex items-center gap-1 text-gray-400 hover:text-red-500 transition-colors text-xs font-medium cursor-pointer">
                         <span class="heart-icon text-lg ${likeColor}">${likeIcon}</span> <span class="like-count">${displayLikes}</span>
                     </button>

@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 
                 notifWrapper.innerHTML = `
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
-                    ${unreadCount > 0 ? `<span class="absolute top-0 right-0 block h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-[#0B1120]"></span>` : ''}
-                    <div id="notifDropdown" class="hidden absolute right-0 mt-2 w-72 bg-[#11131a] border border-gray-800 rounded-lg shadow-xl py-2 z-50">
+                    ${unreadCount > 0 ? `<span class="absolute top-0 right-0 block h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-[#030712]"></span>` : ''}
+                    <div id="notifDropdown" class="hidden absolute right-0 mt-2 w-72 bg-[#09090b] border border-gray-800 rounded-lg shadow-xl py-2 z-50">
                         <h4 class="px-4 py-2 text-xs font-bold text-gray-400 uppercase tracking-wider border-b border-gray-800 mb-2">Notifications</h4>
                         <div class="max-h-64 overflow-y-auto">
                             ${notifications.length === 0 ? '<p class="px-4 py-2 text-sm text-gray-500">No new notifications.</p>' : notifications.slice().reverse().map(n => `

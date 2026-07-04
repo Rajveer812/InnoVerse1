@@ -12,12 +12,12 @@
     <script src="js/app.js" defer></script>
     <script src="js/check-auth.js" defer></script>
 </head>
-<body class="bg-[#0B1120] text-white font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<body class="bg-[#030712] text-white font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden">
     <!-- Decorative Background Elements -->
     <div class="absolute top-[10%] right-[-10%] w-96 h-96 bg-fuchsia-600/20 rounded-full blur-[120px] z-0 animate-pulse"></div>
     <div class="absolute bottom-[10%] left-[-5%] w-80 h-80 bg-blue-600/20 rounded-full blur-[100px] z-0 animate-pulse" style="animation-delay: 2s;"></div>
 
-    <header class="sticky top-0 z-50 bg-[#0B1120]/70 backdrop-blur-xl border-b border-white/5">
+    <header class="sticky top-0 z-50 bg-[#030712]/70 backdrop-blur-xl border-b border-white/5">
         <nav class="flex justify-between items-center px-8 py-5">
         <a href="index.html" class="flex items-center gap-2 cursor-pointer">
             <div class="w-2.5 h-2.5 bg-cyan-400 rounded-full shadow-[0_0_12px_theme(colors.cyan.400)]"></div>
@@ -40,7 +40,7 @@
     </nav>
     </header>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-[#0B1120] border-b border-white/5 px-8 py-4">
+    <div id="mobile-menu" class="hidden md:hidden bg-[#030712] border-b border-white/5 px-8 py-4">
         <div class="flex flex-col gap-4 text-[15px] font-medium text-gray-400">
             <a href="features.html" class="text-white font-semibold">Features</a>
             <button class="w-full px-5 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg transition-all">Submit Project</button>
@@ -88,7 +88,7 @@
     </section>
     </main>
 
-    <footer class="border-t border-white/5 bg-[#0B1120] mt-auto">
+    <footer class="border-t border-white/5 bg-[#030712] mt-auto">
         <div class="max-w-7xl mx-auto px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-2">
                 <div class="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_8px_theme(colors.cyan.400)]"></div>
@@ -102,8 +102,8 @@
         </div>
     </footer>
 
-    <div id="submitModal" class="hidden fixed inset-0 bg-[#0B1120]/90 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
-        <div class="bg-[#11131a] border border-gray-800 rounded-xl p-6 md:p-8 max-w-md w-full relative max-h-[90vh] overflow-y-auto custom-scrollbar">
+    <div id="submitModal" class="hidden fixed inset-0 bg-[#030712]/90 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+        <div class="bg-[#09090b] border border-gray-800 rounded-xl p-6 md:p-8 max-w-md w-full relative max-h-[90vh] overflow-y-auto custom-scrollbar">
             <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white cursor-pointer" type="button">✕</button>
             <h2 class="text-2xl font-bold text-white mb-1">Submit Project</h2>
             <p class="text-gray-400 text-sm mb-6">Showcase your work to the community.</p>
@@ -111,13 +111,13 @@
             <form id="projectForm" novalidate class="flex flex-col gap-4">
                 <div>
                     <label for="projTitle" class="block text-sm font-medium text-gray-300 mb-1">Project Title <span class="text-red-500">*</span></label>
-                    <input type="text" id="projTitle" name="projTitle" required minlength="3" class="w-full bg-[#1a1d26] border border-gray-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" placeholder="e.g., MediSync">
+                    <input type="text" id="projTitle" name="projTitle" required minlength="3" class="w-full bg-[#18181b] border border-gray-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" placeholder="e.g., MediSync">
                     <span class="error-msg text-red-500 text-xs hidden mt-1">Title must be at least 3 characters.</span>
                 </div>
 
                 <div>
                     <label for="projCategory" class="block text-sm font-medium text-gray-300 mb-1">Category <span class="text-red-500">*</span></label>
-                    <select id="projCategory" name="projCategory" required class="w-full bg-[#1a1d26] border border-gray-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors appearance-none">
+                    <select id="projCategory" name="projCategory" required class="w-full bg-[#18181b] border border-gray-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors appearance-none">
                         <option value="" disabled selected>Select a category...</option>
                         <option value="healthcare">Healthcare</option>
                         <option value="education">Education</option>
@@ -130,19 +130,19 @@
 
                 <div>
                     <label for="projUrl" class="block text-sm font-medium text-gray-300 mb-1">Project URL <span class="text-red-500">*</span></label>
-                    <input type="url" id="projUrl" name="projUrl" required class="w-full bg-[#1a1d26] border border-gray-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" placeholder="https://github.com/...">
+                    <input type="url" id="projUrl" name="projUrl" required class="w-full bg-[#18181b] border border-gray-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" placeholder="https://github.com/...">
                     <span class="error-msg text-red-500 text-xs hidden mt-1">Please enter a valid URL.</span>
                 </div>
 
                 <div>
                     <label for="projDesc" class="block text-sm font-medium text-gray-300 mb-1">Description <span class="text-red-500">*</span></label>
-                    <textarea id="projDesc" name="projDesc" required minlength="10" rows="3" class="w-full bg-[#1a1d26] border border-gray-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none" placeholder="Briefly describe what your project does..."></textarea>
+                    <textarea id="projDesc" name="projDesc" required minlength="10" rows="3" class="w-full bg-[#18181b] border border-gray-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none" placeholder="Briefly describe what your project does..."></textarea>
                     <span class="error-msg text-red-500 text-xs hidden mt-1">Description must be at least 10 characters.</span>
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-300 mb-1">Cover Image</label>
-                    <div id="dropZone" class="border-2 border-dashed border-gray-600 rounded-lg p-6 flex flex-col items-center justify-center text-center transition-colors duration-200 cursor-pointer bg-[#1a1d26]">
+                    <div id="dropZone" class="border-2 border-dashed border-gray-600 rounded-lg p-6 flex flex-col items-center justify-center text-center transition-colors duration-200 cursor-pointer bg-[#18181b]">
                         <span class="text-2xl mb-2">📁</span>
                         <p class="text-gray-300 text-xs font-medium">Drag & Drop Image Here</p>
                         <p class="text-gray-500 text-[10px] mt-1">or click to browse</p>

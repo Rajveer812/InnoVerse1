@@ -11,13 +11,14 @@
     <script src="js/main.js" defer></script>
     <script src="js/app.js" defer></script>
     <script src="js/check-auth.js" defer></script>
+    <script src="js/theme.js" defer></script>
 </head>
-<body class="bg-[#0B1120] text-white font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<body class="bg-[#030712] text-white font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden">
     <!-- Decorative Background Elements -->
     <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-violet-600/30 rounded-full blur-[100px] z-0 animate-pulse"></div>
     <div class="absolute bottom-[20%] right-[-5%] w-80 h-80 bg-cyan-600/30 rounded-full blur-[100px] z-0 animate-pulse" style="animation-delay: 2s;"></div>
 
-    <header class="sticky top-0 z-50 bg-[#0B1120]/70 backdrop-blur-xl border-b border-white/5">
+    <header class="sticky top-0 z-50 bg-[#030712]/70 backdrop-blur-xl border-b border-white/5">
         <nav class="flex justify-between items-center px-8 py-5">
         <a href="index.html" class="flex items-center gap-2 cursor-pointer">
             <div class="w-2.5 h-2.5 bg-cyan-400 rounded-full shadow-[0_0_12px_theme(colors.cyan.400)]"></div>
@@ -31,6 +32,7 @@
             <a href="#" class="hover:text-white transition-colors cursor-pointer">Investors</a>
         </div>
         <div class="flex items-center gap-4">
+            <button class="theme-toggle p-2 text-xl hover:scale-110 transition-transform cursor-pointer" title="Toggle Light/Dark Mode">🌓</button>
             <button class="hidden md:block px-5 py-2 text-sm font-medium text-gray-200 border border-white/10 rounded-lg hover:bg-white/5 hover:text-white transition-all cursor-pointer">Sign In</button>
             <button class="hidden md:block px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.3)] btn-hover-effect cursor-pointer">Submit Project</button>
             <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white focus:outline-none cursor-pointer">
@@ -43,7 +45,7 @@
     </nav>
     </header>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-[#0B1120] border-b border-white/5 px-8 py-4">
+    <div id="mobile-menu" class="hidden md:hidden bg-[#030712] border-b border-white/5 px-8 py-4">
         <div class="flex flex-col gap-4 text-[15px] font-medium text-gray-400">
             <a href="features.html" class="hover:text-white transition-colors">Features</a>
             <a href="explore.html" class="hover:text-white transition-colors">Explore</a>
@@ -128,7 +130,7 @@
                     </div>
                     
                     <!-- Card 3 (Project - Front) -->
-                    <div id="heroCard3" class="absolute w-full bg-gradient-to-br from-[#0f1423] to-[#1a2238] backdrop-blur-3xl border border-cyan-500/40 rounded-2xl p-7 shadow-[0_30px_60px_rgba(6,182,212,0.3)] transition-all duration-700 ease-in-out transform rotate-x-0 rotate-y-0 translate-z-10 z-20 animate-float">
+                    <div id="heroCard3" class="absolute w-full bg-gradient-to-br from-[#0a0a0a] to-[#171717] backdrop-blur-3xl border border-cyan-500/40 rounded-2xl p-7 shadow-[0_30px_60px_rgba(6,182,212,0.3)] transition-all duration-700 ease-in-out transform rotate-x-0 rotate-y-0 translate-z-10 z-20 animate-float">
                         <div class="flex justify-between items-start mb-5 border-b border-white/10 pb-5">
                             <div>
                                 <span class="text-cyan-400 text-[10px] font-bold tracking-widest uppercase mb-2 block flex items-center gap-2">
@@ -179,7 +181,7 @@
                 const states = [
                     "w-[85%] h-56 bg-[#111827]/80 rotate-x-12 -rotate-y-12 translate-x-12 -translate-y-12 opacity-50 z-0 animate-float-slow",
                     "w-[95%] h-64 bg-gradient-to-br from-[#1e293b]/90 to-[#0f172a]/90 rotate-x-6 -rotate-y-6 translate-x-6 -translate-y-6 opacity-80 z-10 animate-float-medium",
-                    "w-full bg-gradient-to-br from-[#0f1423] to-[#1a2238] border-cyan-500/40 rotate-x-0 rotate-y-0 translate-z-10 z-20 animate-float"
+                    "w-full bg-gradient-to-br from-[#0a0a0a] to-[#171717] border-cyan-500/40 rotate-x-0 rotate-y-0 translate-z-10 z-20 animate-float"
                 ];
 
                 let currentIndex = 0;
@@ -225,7 +227,7 @@
         </div>
     </section>
 
-    <footer class="border-t border-white/5 bg-[#0B1120] mt-auto">
+    <footer class="border-t border-white/5 bg-[#030712] mt-auto">
         <div class="max-w-7xl mx-auto px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-2">
                 <div class="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_8px_theme(colors.cyan.400)]"></div>

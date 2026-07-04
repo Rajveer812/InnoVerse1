@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3 class="text-lg font-bold text-white mb-2">${proj.title}</h3>
                 <div class="text-gray-400 text-sm mb-6 leading-relaxed flex-grow line-clamp-3 quill-content">${proj.description}</div>
                 <div class="flex items-center justify-between mt-4">
-                    <span class="bg-[#1a1d26] text-blue-400 px-2 py-1 rounded text-xs font-medium capitalize">${proj.category}</span>
+                    <span class="bg-[#18181b] text-blue-400 px-2 py-1 rounded text-xs font-medium capitalize">${proj.category}</span>
                     <div class="flex gap-4">
                         <button onclick="openQuickView('${proj.title.replace(/'/g, "\\'")}')" class="text-gray-400 hover:text-white transition-colors cursor-pointer text-xs flex items-center gap-1" title="Quick View">👁️ View</button>
                         <button onclick="shareProject('${proj.title.replace(/'/g, "\\'")}')" class="text-gray-400 hover:text-white transition-colors cursor-pointer text-xs flex items-center gap-1" title="Copy Link">🔗 Share</button>
@@ -382,7 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         quillJs.onload = () => {
             const wrapper = document.createElement('div');
-            wrapper.className = 'bg-[#11131a] rounded-lg text-white text-sm mb-1 text-left';
+            wrapper.className = 'bg-[#09090b] rounded-lg text-white text-sm mb-1 text-left';
             
             const editorDiv = document.createElement('div');
             editorDiv.id = 'quillEditor';
@@ -545,7 +545,7 @@ window.openQuickView = function(projectName) {
 
     // Create modal container
     const modal = document.createElement('div');
-    modal.className = 'fixed inset-0 z-[9999] flex items-center justify-center bg-[#0B1120]/90 backdrop-blur-sm opacity-0 transition-opacity duration-300';
+    modal.className = 'fixed inset-0 z-[9999] flex items-center justify-center bg-[#030712]/90 backdrop-blur-sm opacity-0 transition-opacity duration-300';
     modal.id = 'quickViewModal';
 
     const comments = proj.comments || [];
@@ -562,11 +562,11 @@ window.openQuickView = function(projectName) {
         : '<p class="text-gray-500 text-sm">No comments yet. Be the first to discuss this project!</p>';
 
     modal.innerHTML = `
-        <div class="bg-[#11131a] border border-white/10 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform scale-95 transition-transform duration-300 mx-4">
+        <div class="bg-[#09090b] border border-white/10 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform scale-95 transition-transform duration-300 mx-4">
             <!-- Header -->
             <div class="p-6 border-b border-white/10 flex justify-between items-start shrink-0">
                 <div>
-                    <span class="bg-[#1a1d26] text-blue-400 px-2 py-1 rounded text-xs font-medium capitalize mb-2 inline-block">${proj.category}</span>
+                    <span class="bg-[#18181b] text-blue-400 px-2 py-1 rounded text-xs font-medium capitalize mb-2 inline-block">${proj.category}</span>
                     <h2 class="text-2xl font-bold text-white">${proj.title}</h2>
                     <a href="profile.html?user=${encodeURIComponent(proj.userEmail || 'test@test.com')}" class="text-gray-500 hover:text-cyan-400 text-xs mt-1 block">👤 ${proj.userEmail ? proj.userEmail.split('@')[0] : 'Anonymous'}</a>
                 </div>

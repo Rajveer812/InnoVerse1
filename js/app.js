@@ -40,12 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. contextmenu Event: Custom Right-Click Menu
     const customMenu = document.createElement('div');
     customMenu.id = 'customContextMenu';
-    customMenu.className = 'hidden fixed bg-[#11131a] border border-gray-800 rounded-lg shadow-xl py-2 w-48 z-[200] transition-opacity duration-200 opacity-0';
+    customMenu.className = 'hidden fixed bg-[#09090b] border border-gray-800 rounded-lg shadow-xl py-2 w-48 z-[200] transition-opacity duration-200 opacity-0';
     customMenu.innerHTML = `
-        <button class="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-[#1a1d26] hover:text-white transition-colors flex items-center gap-2" id="contextShare">
+        <button class="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-[#18181b] hover:text-white transition-colors flex items-center gap-2" id="contextShare">
             🔗 Share Project
         </button>
-        <button class="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-[#1a1d26] hover:text-white transition-colors flex items-center gap-2" id="contextQuickView">
+        <button class="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-[#18181b] hover:text-white transition-colors flex items-center gap-2" id="contextQuickView">
             👁️ Quick View
         </button>
     `;
@@ -137,7 +137,7 @@ window.openQuickView = function(projectTitle) {
     if (!qvModal) {
         qvModal = document.createElement('div');
         qvModal.id = 'quickViewModal';
-        qvModal.className = 'fixed inset-0 bg-[#0B1120]/90 backdrop-blur-sm z-[200] flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 hidden';
+        qvModal.className = 'fixed inset-0 bg-[#030712]/90 backdrop-blur-sm z-[200] flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 hidden';
         document.body.appendChild(qvModal);
         
         qvModal.addEventListener('click', (e) => {
@@ -152,11 +152,11 @@ window.openQuickView = function(projectTitle) {
     }
 
     qvModal.innerHTML = `
-        <div class="bg-[#11131a] border border-gray-800 rounded-xl p-8 max-w-lg w-full relative transform scale-95 transition-transform duration-300 shadow-[0_10px_40px_rgba(0,0,0,0.5)]" id="qvContent">
+        <div class="bg-[#09090b] border border-gray-800 rounded-xl p-8 max-w-lg w-full relative transform scale-95 transition-transform duration-300 shadow-[0_10px_40px_rgba(0,0,0,0.5)]" id="qvContent">
             <button onclick="closeQuickView()" class="absolute top-4 right-4 text-gray-400 hover:text-white cursor-pointer" type="button">✕</button>
             <span class="text-cyan-400 text-[10px] font-bold tracking-widest uppercase mb-2 block">${proj.tag || 'COMMUNITY SUBMISSION'}</span>
             <h2 class="text-2xl font-bold text-white mb-2">${proj.title}</h2>
-            <div class="inline-block bg-[#1a1d26] text-blue-400 px-3 py-1 rounded text-xs font-medium capitalize mb-4">${proj.category}</div>
+            <div class="inline-block bg-[#18181b] text-blue-400 px-3 py-1 rounded text-xs font-medium capitalize mb-4">${proj.category}</div>
             
             ${proj.coverImage ? `<img src="${proj.coverImage}" alt="Cover Image" class="w-full h-48 object-cover rounded-lg mb-4 border border-gray-700">` : ''}
 
