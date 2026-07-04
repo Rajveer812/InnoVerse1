@@ -17,3 +17,103 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0; /* Starts hidden, animation makes it visible */
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+
+/* Micro interactions */
+.btn-hover-effect {
+    transition: all 0.3s ease;
+}
+.btn-hover-effect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+}
+.btn-hover-effect:active {
+    transform: translateY(1px);
+}
+
+/* Quill Content Styling */
+.quill-content p {
+    margin-bottom: 0.75rem;
+}
+.quill-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.quill-content ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.quill-content strong {
+    color: white;
+    font-weight: bold;
+}
+.quill-content a {
+    color: #38bdf8;
+    text-decoration: underline;
+}
+/* Style the Quill editor itself */
+.ql-toolbar.ql-snow {
+    border-color: #374151 !important;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.ql-container.ql-snow {
+    border-color: #374151 !important;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.ql-snow .ql-stroke {
+    stroke: #9ca3af !important;
+}
+.ql-snow .ql-fill {
+    fill: #9ca3af !important;
+}
+.ql-snow .ql-picker {
+    color: #9ca3af !important;
+}
+
+/* 3D and Floating Utilities */
+.perspective-1000 { perspective: 1000px; }
+.transform-style-3d { transform-style: preserve-3d; }
+.rotate-x-12 { transform: rotateX(12deg) rotateY(-12deg) translateX(2rem) translateY(-2rem); }
+.rotate-x-6 { transform: rotateX(6deg) rotateY(-6deg) translateX(1rem) translateY(-1rem); }
+.translate-z-10 { transform: translateZ(40px); }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateZ(40px); }
+    50% { transform: translateY(-10px) translateZ(40px); }
+}
+@keyframes float-medium {
+    0%, 100% { transform: rotateX(6deg) rotateY(-6deg) translateX(1rem) translateY(-1rem); }
+    50% { transform: rotateX(6deg) rotateY(-6deg) translateX(1rem) translateY(-1.5rem); }
+}
+@keyframes float-slow {
+    0%, 100% { transform: rotateX(12deg) rotateY(-12deg) translateX(2rem) translateY(-2rem); }
+    50% { transform: rotateX(12deg) rotateY(-12deg) translateX(2rem) translateY(-2.5rem); }
+}
+
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-float-medium { animation: float-medium 5s ease-in-out infinite reverse; }
+.animate-float-slow { animation: float-slow 6s ease-in-out infinite; }

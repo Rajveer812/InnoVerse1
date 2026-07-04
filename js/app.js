@@ -158,8 +158,10 @@ window.openQuickView = function(projectTitle) {
             <h2 class="text-2xl font-bold text-white mb-2">${proj.title}</h2>
             <div class="inline-block bg-[#1a1d26] text-blue-400 px-3 py-1 rounded text-xs font-medium capitalize mb-4">${proj.category}</div>
             
+            ${proj.coverImage ? `<img src="${proj.coverImage}" alt="Cover Image" class="w-full h-48 object-cover rounded-lg mb-4 border border-gray-700">` : ''}
+
             <h3 class="text-gray-300 text-sm font-semibold mb-2">About this project</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">${proj.description}</p>
+            <div class="text-gray-400 text-sm leading-relaxed mb-6 quill-content max-h-64 overflow-y-auto pr-2">${proj.description}</div>
             
             <div class="flex gap-4">
                 <button onclick="shareProject('${proj.title.replace(/'/g, "\\'")}')" class="flex-1 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg hover:shadow-[0_0_15px_rgba(79,70,229,0.5)] transition-all cursor-pointer">🔗 Share Link</button>

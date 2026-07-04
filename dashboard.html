@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnoVerse - User Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/check-auth.js" defer></script>
+    <script src="js/transitions.js" defer></script>
+    <script src="js/toast.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+</head>
+<body class="bg-[#0B1120] text-white font-sans antialiased min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-[#0B1120]/80 backdrop-blur-md border-b border-white/5">
+        <nav class="flex justify-between items-center px-8 py-5">
+            <a href="index.html" class="flex items-center gap-2 cursor-pointer">
+                <div class="w-2.5 h-2.5 bg-cyan-400 rounded-full shadow-[0_0_12px_theme(colors.cyan.400)]"></div>
+                <h1 class="text-xl font-bold tracking-wide text-white">InnoVerse</h1>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-[15px] font-medium text-gray-400">
+                <a href="features.html" class="hover:text-white transition-colors cursor-pointer">Features</a>
+                <a href="explore.html" class="hover:text-white transition-colors cursor-pointer">Explore</a>
+                <a href="collaborate.html" class="hover:text-white transition-colors cursor-pointer">Collaborate</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="hidden md:block px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.3)] btn-hover-effect cursor-pointer" onclick="window.location.href='submit.html'">Submit Project</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-8 py-16 w-full animate-fade-in-up">
+        <div class="mb-10 flex justify-between items-end">
+            <div>
+                <h1 class="text-4xl font-bold mb-2 text-white">My Dashboard</h1>
+                <p class="text-gray-400">Manage your submitted projects.</p>
+            </div>
+        </div>
+
+        <div id="dashboardGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in-up delay-100">
+            <!-- User's projects will be populated here by dashboard.js -->
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-2 h-2 bg-gray-500 rounded-full"></div>
+                <span class="text-gray-500 text-sm font-medium">InnoVerse © 2026</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -6,11 +6,18 @@
     <title>InnoVerse - Home</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/transitions.js" defer></script>
+    <script src="js/toast.js" defer></script>
     <script src="js/main.js" defer></script>
-    <script src="js/lab3.js" defer></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/check-auth.js" defer></script>
 </head>
-<body class="bg-[#0B1120] text-white font-sans antialiased min-h-screen flex flex-col">
-    <header class="sticky top-0 z-50 bg-[#0B1120]/80 backdrop-blur-md border-b border-white/5">
+<body class="bg-[#0B1120] text-white font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+    <!-- Decorative Background Elements -->
+    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-violet-600/30 rounded-full blur-[100px] z-0 animate-pulse"></div>
+    <div class="absolute bottom-[20%] right-[-5%] w-80 h-80 bg-cyan-600/30 rounded-full blur-[100px] z-0 animate-pulse" style="animation-delay: 2s;"></div>
+
+    <header class="sticky top-0 z-50 bg-[#0B1120]/70 backdrop-blur-xl border-b border-white/5">
         <nav class="flex justify-between items-center px-8 py-5">
         <a href="index.html" class="flex items-center gap-2 cursor-pointer">
             <div class="w-2.5 h-2.5 bg-cyan-400 rounded-full shadow-[0_0_12px_theme(colors.cyan.400)]"></div>
@@ -25,7 +32,7 @@
         </div>
         <div class="flex items-center gap-4">
             <button class="hidden md:block px-5 py-2 text-sm font-medium text-gray-200 border border-white/10 rounded-lg hover:bg-white/5 hover:text-white transition-all cursor-pointer">Sign In</button>
-            <button class="hidden md:block px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.3)] hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] transition-all cursor-pointer">Submit Project</button>
+            <button class="hidden md:block px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.3)] btn-hover-effect cursor-pointer">Submit Project</button>
             <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white focus:outline-none cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -46,37 +53,177 @@
         </div>
     </div>
 
-    <main class="flex-grow">
+    <main class="flex-grow z-10 relative">
     <section class="max-w-7xl mx-auto px-8 py-10 mt-2">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="flex flex-col gap-6">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#0f5b66] bg-[#052b33] w-max">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#0f5b66] bg-[#052b33] w-max animate-fade-in-up">
                     <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
                     <span class="text-xs font-semibold text-cyan-400 tracking-wider">CHRIST UNIVERSITY • BENGALURU</span>
                 </div>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-                    Where Student <br><span class="text-[#7b61ff]">Ideas</span> <br>Become Real <br>Products
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white animate-fade-in-up delay-100">
+                    Where Student <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">Ideas</span> <br>Become Real <br>Products
                 </h1>
-                <p class="text-gray-400 text-lg md:text-xl max-w-xl leading-relaxed">
+                <p class="text-gray-400 text-lg md:text-xl max-w-xl leading-relaxed animate-fade-in-up delay-200">
                     InnoVerse centralises Christ University's best student-built software. Discover, collaborate, and connect with investors, all in one place.
                 </p>
-                <div class="flex flex-wrap items-center gap-4 mt-4">
-                    <a href="explore.html" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg flex items-center gap-2">⚡ Explore Projects</a>
+                <div class="flex flex-wrap items-center gap-4 mt-4 animate-fade-in-up delay-300">
+                    <a href="explore.html" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 text-white font-semibold rounded-lg flex items-center gap-2 transition-all transform hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/20">⚡ Explore Projects</a>
                 </div>
                 <div class="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-gray-800 max-w-lg">
-                    <div><div class="text-3xl font-bold text-[#b06cf7] mb-1">240+</div><div class="text-sm text-gray-500">Projects Live</div></div>
-                    <div><div class="text-3xl font-bold text-[#38bdf8] mb-1">1,800+</div><div class="text-sm text-gray-500">Students</div></div>
-                    <div><div class="text-3xl font-bold text-[#f97316] mb-1">38</div><div class="text-sm text-gray-500">Investors</div></div>
+                    <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-4 text-center btn-hover-effect">
+                        <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 mb-1">240+</div>
+                        <div class="text-xs text-gray-400 font-medium tracking-wide uppercase">Projects Live</div>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-4 text-center btn-hover-effect">
+                        <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-1">1,800+</div>
+                        <div class="text-xs text-gray-400 font-medium tracking-wide uppercase">Students</div>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-4 text-center btn-hover-effect">
+                        <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-400 mb-1">38</div>
+                        <div class="text-xs text-gray-400 font-medium tracking-wide uppercase">Investors</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="flex justify-center lg:justify-end w-full lg:w-auto">
-                <div id="topProjectsContainer" class="flex flex-col gap-4 w-full max-w-sm">
-                    <!-- Top projects will be dynamically populated here by JS -->
+            <div class="flex justify-center lg:justify-end w-full lg:w-auto animate-fade-in-up delay-300 relative h-[400px] lg:h-[500px] perspective-1000">
+                <!-- Floating Glass Cards UI -->
+                <div id="heroCardStack" class="relative w-full max-w-md h-full flex items-center justify-center transform-style-3d mt-10 md:mt-0 cursor-pointer group" title="Click to rotate cards!">
+                    
+                    <!-- Card 1 (Code - Back) -->
+                    <div id="heroCard1" class="absolute w-[85%] h-56 bg-[#111827]/80 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-[0_0_30px_rgba(139,92,246,0.1)] transition-all duration-700 ease-in-out transform rotate-x-12 -rotate-y-12 translate-x-12 -translate-y-12 opacity-50 z-0 animate-float-slow flex flex-col">
+                        <div class="flex items-center gap-3 mb-4 border-b border-white/5 pb-3">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 flex items-center justify-center text-xs font-bold text-white">JS</div>
+                            <div class="text-sm font-bold text-gray-300">server.js</div>
+                        </div>
+                        <div class="flex flex-col gap-2 font-mono text-[10px] text-gray-500">
+                            <p><span class="text-pink-500">import</span> express <span class="text-pink-500">from</span> <span class="text-green-400">'express'</span>;</p>
+                            <p><span class="text-pink-500">const</span> app = <span class="text-blue-400">express</span>();</p>
+                            <p>app.<span class="text-blue-400">use</span>(express.<span class="text-blue-400">json</span>());</p>
+                            <p class="mt-2 text-gray-600">// Initialize InnoVerse API</p>
+                            <p>app.<span class="text-blue-400">listen</span>(<span class="text-orange-400">3000</span>, () => {</p>
+                            <p class="pl-4">console.<span class="text-blue-400">log</span>(<span class="text-green-400">'Server running...'</span>);</p>
+                            <p>});</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 (Metrics - Middle) -->
+                    <div id="heroCard2" class="absolute w-[95%] h-64 bg-gradient-to-br from-[#1e293b]/90 to-[#0f172a]/90 backdrop-blur-2xl border border-white/20 rounded-2xl p-6 shadow-[0_20px_40px_rgba(6,182,212,0.2)] transition-all duration-700 ease-in-out transform rotate-x-6 -rotate-y-6 translate-x-6 -translate-y-6 opacity-80 z-10 animate-float-medium flex flex-col">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-lg shadow-[0_0_15px_rgba(6,182,212,0.4)]">📈</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Platform Metrics</h4>
+                                    <p class="text-[10px] text-cyan-400 uppercase tracking-widest">Live Activity</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-end gap-3 h-24 mt-auto border-b border-white/10 pb-2">
+                            <div class="w-full bg-blue-500/20 rounded-t-sm h-[40%] relative"><div class="absolute -top-5 w-full text-center text-[10px] text-gray-400">Mon</div></div>
+                            <div class="w-full bg-blue-500/30 rounded-t-sm h-[60%] relative"><div class="absolute -top-5 w-full text-center text-[10px] text-gray-400">Tue</div></div>
+                            <div class="w-full bg-cyan-500/50 rounded-t-sm h-[80%] relative"><div class="absolute -top-5 w-full text-center text-[10px] text-cyan-400 font-bold">Wed</div></div>
+                            <div class="w-full bg-blue-500/20 rounded-t-sm h-[50%] relative"><div class="absolute -top-5 w-full text-center text-[10px] text-gray-400">Thu</div></div>
+                            <div class="w-full bg-blue-500/40 rounded-t-sm h-[90%] relative"><div class="absolute -top-5 w-full text-center text-[10px] text-gray-400">Fri</div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 (Project - Front) -->
+                    <div id="heroCard3" class="absolute w-full bg-gradient-to-br from-[#0f1423] to-[#1a2238] backdrop-blur-3xl border border-cyan-500/40 rounded-2xl p-7 shadow-[0_30px_60px_rgba(6,182,212,0.3)] transition-all duration-700 ease-in-out transform rotate-x-0 rotate-y-0 translate-z-10 z-20 animate-float">
+                        <div class="flex justify-between items-start mb-5 border-b border-white/10 pb-5">
+                            <div>
+                                <span class="text-cyan-400 text-[10px] font-bold tracking-widest uppercase mb-2 block flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> FEATURED PROJECT
+                                </span>
+                                <h3 class="text-2xl font-extrabold text-white mb-2">MediSync AI</h3>
+                                <div class="flex gap-2 mt-3">
+                                    <span class="px-2.5 py-1 bg-blue-500/20 border border-blue-500/30 text-blue-300 text-[10px] font-bold uppercase rounded-md">Healthcare</span>
+                                    <span class="px-2.5 py-1 bg-fuchsia-500/20 border border-fuchsia-500/30 text-fuchsia-300 text-[10px] font-bold uppercase rounded-md">Python</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end bg-black/40 p-3 rounded-xl border border-white/5">
+                                <div class="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-1">Total Likes</div>
+                                <div class="text-2xl font-black text-white flex items-center gap-1.5"><span class="text-red-500 animate-pulse">♥</span> 1,204</div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-sm text-gray-300 leading-relaxed mb-6">
+                            An advanced AI pipeline that analyzes patient symptoms and medical history to predict rare diseases with 91% accuracy.
+                        </p>
+                        
+                        <div class="flex gap-3 mt-auto">
+                            <button onclick="event.stopPropagation(); sessionStorage.setItem('searchQuery', 'MediSync'); window.location.href='explore.html';" class="flex-1 py-2.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white text-sm font-bold rounded-lg shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-all cursor-pointer">
+                                👁️ View Project
+                            </button>
+                            <button onclick="event.stopPropagation(); window.showToast('Share link copied!', 'success')" class="px-4 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-white text-sm font-bold rounded-lg transition-all cursor-pointer">
+                                🔗 Share
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Glowing Orbs -->
+                    <div class="absolute top-1/4 -right-12 w-40 h-40 bg-cyan-500/30 rounded-full blur-[70px] animate-pulse pointer-events-none"></div>
+                    <div class="absolute bottom-1/4 -left-12 w-48 h-48 bg-violet-600/20 rounded-full blur-[80px] animate-pulse delay-700 pointer-events-none"></div>
                 </div>
             </div>
+            
+            <script>
+                // Hero Card Rotation Logic
+                const cardStack = document.getElementById('heroCardStack');
+                const cards = [
+                    document.getElementById('heroCard1'),
+                    document.getElementById('heroCard2'),
+                    document.getElementById('heroCard3')
+                ];
+                
+                // State classes for Back, Middle, Front
+                const states = [
+                    "w-[85%] h-56 bg-[#111827]/80 rotate-x-12 -rotate-y-12 translate-x-12 -translate-y-12 opacity-50 z-0 animate-float-slow",
+                    "w-[95%] h-64 bg-gradient-to-br from-[#1e293b]/90 to-[#0f172a]/90 rotate-x-6 -rotate-y-6 translate-x-6 -translate-y-6 opacity-80 z-10 animate-float-medium",
+                    "w-full bg-gradient-to-br from-[#0f1423] to-[#1a2238] border-cyan-500/40 rotate-x-0 rotate-y-0 translate-z-10 z-20 animate-float"
+                ];
+
+                let currentIndex = 0;
+
+                cardStack.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % 3;
+                    
+                    cards.forEach((card, i) => {
+                        // Calculate which state this card should have now
+                        const stateIndex = (i + currentIndex) % 3;
+                        
+                        // Clear all state classes
+                        states.forEach(state => {
+                            const classes = state.split(' ');
+                            classes.forEach(cls => card.classList.remove(cls));
+                        });
+                        
+                        // Apply new state classes
+                        const newClasses = states[stateIndex].split(' ');
+                        newClasses.forEach(cls => card.classList.add(cls));
+                    });
+                });
+                
+                // Auto-rotate every 5 seconds for a dynamic feel
+                setInterval(() => {
+                    if(cardStack.matches(':hover')) return; // pause if user is interacting
+                    cardStack.click();
+                }, 5000);
+            </script>
         </div>
-    </main>
+    </section>
+
+    <!-- Top Projects Section -->
+    <section class="max-w-7xl mx-auto px-8 py-12 border-t border-white/5">
+        <div class="flex justify-between items-end mb-8">
+            <div>
+                <h2 class="text-3xl font-bold text-white mb-2">Trending Projects</h2>
+                <p class="text-gray-400">The most liked projects this week.</p>
+            </div>
+        </div>
+        <div id="topProjectsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Top projects injected via JS -->
+        </div>
+    </section>
 
     <footer class="border-t border-white/5 bg-[#0B1120] mt-auto">
         <div class="max-w-7xl mx-auto px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -92,61 +239,5 @@
         </div>
     </footer>
 
-    <div id="submitModal" class="hidden fixed inset-0 bg-[#0B1120]/90 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
-        <div class="bg-[#11131a] border border-gray-800 rounded-xl p-6 md:p-8 max-w-md w-full relative max-h-[90vh] overflow-y-auto custom-scrollbar">
-            <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white cursor-pointer" type="button">✕</button>
-            <h2 class="text-2xl font-bold text-white mb-1">Submit Project</h2>
-            <p class="text-gray-400 text-sm mb-6">Showcase your work to the community.</p>
-            
-            <form id="projectForm" novalidate class="flex flex-col gap-4">
-                <div>
-                    <label for="projTitle" class="block text-sm font-medium text-gray-300 mb-1">Project Title <span class="text-red-500">*</span></label>
-                    <input type="text" id="projTitle" name="projTitle" required minlength="3" class="w-full bg-[#1a1d26] border border-gray-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" placeholder="e.g., MediSync">
-                    <span class="error-msg text-red-500 text-xs hidden mt-1">Title must be at least 3 characters.</span>
-                </div>
-
-                <div>
-                    <label for="projCategory" class="block text-sm font-medium text-gray-300 mb-1">Category <span class="text-red-500">*</span></label>
-                    <select id="projCategory" name="projCategory" required class="w-full bg-[#1a1d26] border border-gray-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors appearance-none">
-                        <option value="" disabled selected>Select a category...</option>
-                        <option value="healthcare">Healthcare</option>
-                        <option value="education">Education</option>
-                        <option value="fintech">FinTech</option>
-                        <option value="ecommerce">E-Commerce</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <span class="error-msg text-red-500 text-xs hidden mt-1">Please select a category.</span>
-                </div>
-
-                <div>
-                    <label for="projUrl" class="block text-sm font-medium text-gray-300 mb-1">Project URL <span class="text-red-500">*</span></label>
-                    <input type="url" id="projUrl" name="projUrl" required class="w-full bg-[#1a1d26] border border-gray-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" placeholder="https://github.com/...">
-                    <span class="error-msg text-red-500 text-xs hidden mt-1">Please enter a valid URL.</span>
-                </div>
-
-                <div>
-                    <label for="projDesc" class="block text-sm font-medium text-gray-300 mb-1">Description <span class="text-red-500">*</span></label>
-                    <textarea id="projDesc" name="projDesc" required minlength="10" rows="3" class="w-full bg-[#1a1d26] border border-gray-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none" placeholder="Briefly describe what your project does..."></textarea>
-                    <span class="error-msg text-red-500 text-xs hidden mt-1">Description must be at least 10 characters.</span>
-                    <div id="charCount" class="text-gray-400 text-xs mt-1 text-right font-medium">0 characters</div>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-300 mb-1">Cover Image</label>
-                    <div id="dropZone" class="border-2 border-dashed border-gray-600 rounded-lg p-6 flex flex-col items-center justify-center text-center transition-colors duration-200 cursor-pointer bg-[#1a1d26]">
-                        <span class="text-2xl mb-2">📁</span>
-                        <p class="text-gray-300 text-xs font-medium">Drag & Drop Image Here</p>
-                        <p class="text-gray-500 text-[10px] mt-1">or click to browse</p>
-                        <input type="file" id="fileInput" name="fileInput" class="hidden" accept="image/*">
-                    </div>
-                    <div id="fileInfo" class="mt-2 hidden text-xs text-cyan-400 text-center font-medium"></div>
-                </div>
-
-                <button type="submit" class="w-full mt-2 px-5 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-[0_0_15px_rgba(79,70,229,0.3)] hover:shadow-[0_0_20px_rgba(79,70,229,0.5)] transition-all cursor-pointer flex justify-center items-center gap-2">
-                    Submit Project
-                </button>
-            </form>
-        </div>
-    </div>
 </body>
 </html>

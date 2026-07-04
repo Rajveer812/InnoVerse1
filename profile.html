@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - InnoVerse</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/transitions.js" defer></script>
+    <script src="js/toast.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/check-auth.js" defer></script>
+    <script src="js/profile.js" defer></script>
+</head>
+<body class="bg-[#0B1120] text-white font-sans antialiased min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-[#0B1120]/80 backdrop-blur-md border-b border-white/5">
+        <nav class="flex justify-between items-center px-8 py-5">
+            <a href="index.html" class="flex items-center gap-2 cursor-pointer">
+                <div class="w-2.5 h-2.5 bg-cyan-400 rounded-full shadow-[0_0_12px_theme(colors.cyan.400)]"></div>
+                <h1 class="text-xl font-bold tracking-wide text-white">InnoVerse</h1>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-[15px] font-medium text-gray-400">
+                <a href="features.html" class="hover:text-white transition-colors cursor-pointer">Features</a>
+                <a href="explore.html" class="hover:text-white transition-colors cursor-pointer">Explore</a>
+                <a href="collaborate.html" class="hover:text-white transition-colors cursor-pointer">Collaborate</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="hidden md:block px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.3)] btn-hover-effect cursor-pointer" onclick="window.location.href='submit.html'">Submit Project</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-8 py-16 w-full animate-fade-in-up">
+        <!-- Profile Header -->
+        <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 mb-12 flex flex-col md:flex-row gap-8 items-center md:items-start relative overflow-hidden">
+            <!-- Decorative gradient behind profile -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 blur-[80px] rounded-full pointer-events-none"></div>
+            
+            <div class="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 p-1 shrink-0">
+                <div class="w-full h-full bg-[#11131a] rounded-full flex items-center justify-center text-4xl overflow-hidden" id="profileAvatar">
+                    👤
+                </div>
+            </div>
+            <div class="flex flex-col text-center md:text-left z-10 flex-grow">
+                <h1 class="text-4xl font-bold text-white mb-2" id="profileName">Loading...</h1>
+                <p class="text-cyan-400 font-medium mb-4" id="profileEmail">@loading</p>
+                <p class="text-gray-400 max-w-2xl leading-relaxed mb-6" id="profileBio">
+                    Software engineering student passionate about building scalable web applications and artificial intelligence solutions.
+                </p>
+                <div class="flex gap-4 justify-center md:justify-start">
+                    <button class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 cursor-pointer">
+                        🐙 GitHub
+                    </button>
+                    <button class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 cursor-pointer">
+                        💼 LinkedIn
+                    </button>
+                </div>
+            </div>
+            <div class="flex flex-row md:flex-col gap-6 justify-center w-full md:w-auto border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-8 text-center">
+                <div>
+                    <div class="text-3xl font-bold text-white mb-1" id="profileProjectCount">0</div>
+                    <div class="text-xs text-gray-400 font-medium tracking-wide uppercase">Projects</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-white mb-1" id="profileTotalLikes">0</div>
+                    <div class="text-xs text-gray-400 font-medium tracking-wide uppercase">Total Likes</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Projects Grid -->
+        <h2 class="text-2xl font-bold text-white mb-6 border-b border-white/10 pb-4">Portfolio Projects</h2>
+        <div id="profileProjectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in-up delay-100">
+            <!-- Projects injected via JS -->
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-8 flex justify-center items-center">
+            <span class="text-gray-500 text-sm font-medium">InnoVerse © 2026</span>
+        </div>
+    </footer>
+</body>
+</html>
